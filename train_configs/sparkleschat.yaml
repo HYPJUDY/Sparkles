@@ -1,0 +1,114 @@
+model:
+  arch: sparkleschat
+  model_type: pretrain_vicuna
+  freeze_vit: True
+  freeze_qformer: True
+  ckpt: '/path/to/Sparkles/models/pretrained/minigpt4_7b_stage1.pth'
+  end_sym: "###"
+  prompt_template: '###Human: {} ###Assistant: '
+  max_txt_len: 160  # for MiniGPT-4
+  prompt_path: "prompts/alignment.txt"  # for MiniGPT-4
+
+
+datasets:
+  SparklesDialogueCC_turn1_1img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    anno_path: 'annotations/SparklesDialogueCC_turn1_1img.json'
+    img_root: 'images'
+    sample_ratio: 2
+  SparklesDialogueCC_turn1_2img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    anno_path: 'annotations/SparklesDialogueCC_turn1_2img.json'
+    img_root: 'images'
+    sample_ratio: 2
+  SparklesDialogueCC_turn1_3img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    anno_path: 'annotations/SparklesDialogueCC_turn1_3img.json'
+    img_root: 'images'
+    sample_ratio: 2
+
+  SparklesDialogueCC_turn2_2img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    anno_path: 'annotations/SparklesDialogueCC_turn2_2img.json'
+    img_root: 'images'
+    sample_ratio: 1
+  SparklesDialogueCC_turn2_3img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    anno_path: 'annotations/SparklesDialogueCC_turn2_3img.json'
+    img_root: 'images'
+    sample_ratio: 1
+  SparklesDialogueCC_turn2_4img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    anno_path: 'annotations/SparklesDialogueCC_turn2_4img.json'
+    img_root: 'images'
+    sample_ratio: 1
+
+  SparklesDialogueVG_turn1_2img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    anno_path: 'annotations/SparklesDialogueVG_turn1_2img.json'
+    img_root: 'images'
+    sample_ratio: 2
+  SparklesDialogueVG_turn1_3img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    anno_path: 'annotations/SparklesDialogueVG_turn1_3img.json'
+    img_root: 'images'
+    sample_ratio: 2
+
+  SparklesDialogueVG_turn2_3img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    anno_path: 'annotations/SparklesDialogueVG_turn2_3img.json'
+    img_root: 'images'
+    sample_ratio: 1
+  SparklesDialogueVG_turn2_4img:
+    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    anno_path: 'annotations/SparklesDialogueVG_turn2_4img.json'
+    img_root: 'images'
+    sample_ratio: 1
+
+#  cc_sbu_align:
+#    sample_ratio: 0
+#    build_info:
+#      storage: '/path/to/Sparkles/data/cc_sbu_align/'
+#      ann_paths: '/path/to/Sparkles/data/cc_sbu_align/filter_cap.json'
+#      vis_root: '/path/to/Sparkles/data/cc_sbu_align/image'
+#
+#  LLaVA_description:
+#    root_dir: '/path/to/'
+#    anno_path: 'Sparkles/data/LLaVa/LLaVA_detail_23k_filtered_for_Sparkles.json'
+#    img_root: 'coco/train2017'
+#    sample_ratio: 0
+#  LLaVA_reasoning:
+#    root_dir: '/path/to/'
+#    anno_path: 'Sparkles/data/LLaVa/LLaVA_complex_reasoning_77k_filtered_for_Sparkles.json'
+#    img_root: 'coco/train2017'
+#    sample_ratio: 0
+
+run:
+  task: image_text_pretrain
+  lr_sched: "linear_warmup_cosine_lr"
+  init_lr: 3e-5
+  min_lr: 1e-5
+  warmup_lr: 1e-6
+
+  weight_decay: 0.05
+  max_epoch: 5
+  iters_per_epoch: 400
+  batch_size_train: 1
+  accum_grad_iters: 1
+  batch_size_eval: 1
+  num_workers: 8
+  warmup_steps: 400
+
+  seed: 42
+  output_dir: "/path/to/Sparkles/models/SparklesChat/"
+
+  amp: True
+  resume_ckpt_path: null
+
+  evaluate: False
+  train_splits: ["train"]
+
+  device: "cuda"
+  world_size: 1
+  dist_url: "env://"
+  distributed: True

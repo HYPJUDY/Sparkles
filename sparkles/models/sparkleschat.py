@@ -14,7 +14,8 @@ from transformers import LlamaTokenizer
 def init_llama_tokenizer(llama_model):
     llama_tokenizer = LlamaTokenizer.from_pretrained(llama_model, use_fast=False)
     llama_tokenizer.pad_token = llama_tokenizer.eos_token
-    llama_tokenizer.add_special_tokens({'additional_special_tokens': ["<ImageHere>", "<ImagePad>"]})
+    llama_tokenizer.add_special_tokens({'additional_special_tokens': ["<ImageHere>"]})
+    llama_tokenizer.add_special_tokens({'additional_special_tokens': ["<ImagePad>"]})
     media_token_id = llama_tokenizer("<ImageHere>", add_special_tokens=False)["input_ids"][-1]
     media_pad_id = llama_tokenizer("<ImagePad>", add_special_tokens=False)["input_ids"][-1]
     return llama_tokenizer, media_token_id, media_pad_id

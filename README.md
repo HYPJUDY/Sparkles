@@ -166,7 +166,7 @@ For image processing, we use the visual encoder from [BLIP-2](https://github.com
        pip install git+https://github.com/lm-sys/FastChat.git@v0.1.10
        python -m fastchat.model.apply_delta --base /path/to/llama-7b-hf/  --target /path/to/vicuna-7b-v0/  --delta /path/to/vicuna-7b-delta-v0/
        ```
-       Then, set the path of `llama_model` in the [configs/models/Sparkles.yaml](sparkles/configs/models/Sparkles.yaml#L16) to the path of the vicuna weight.
+       Then, set the path of `llama_model` in the [configs/models/sparkleschat.yaml](sparkles/configs/models/sparkleschat.yaml#L16) to the path of the vicuna weight.
        ```yaml
        llama_model: "/path/to/vicuna-7b-v0/"
        ```

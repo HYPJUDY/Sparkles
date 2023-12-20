@@ -67,3 +67,6 @@ dependencies:
     - kaleido
     - more-itertools
     - protobuf==3.20.0
+    - pytz
+    - sentencepiece
+    - more_itertools

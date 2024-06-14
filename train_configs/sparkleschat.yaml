@@ -3,7 +3,8 @@ model:
   model_type: pretrain_vicuna
   freeze_vit: True
   freeze_qformer: True
-  ckpt: '/path/to/Sparkles/models/pretrained/minigpt4_7b_stage1.pth'
+#  ckpt: '/mnt/localdata/Users/yupanhuang/data/Sparkles/models/pretrained/minigpt4_7b_stage1.pth'
+  ckpt: '/mnt/localdata/Users/yupanhuang/models/cheetah/cheetah_vicuna_7b.pth'
   end_sym: "###"
   prompt_template: '###Human: {} ###Assistant: '
   max_txt_len: 160  # for MiniGPT-4
@@ -12,55 +13,55 @@ model:
 
 datasets:
   SparklesDialogueCC_turn1_1img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueCC/'
     anno_path: 'annotations/SparklesDialogueCC_turn1_1img.json'
     img_root: 'images'
     sample_ratio: 2
   SparklesDialogueCC_turn1_2img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueCC/'
     anno_path: 'annotations/SparklesDialogueCC_turn1_2img.json'
     img_root: 'images'
     sample_ratio: 2
   SparklesDialogueCC_turn1_3img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueCC/'
     anno_path: 'annotations/SparklesDialogueCC_turn1_3img.json'
     img_root: 'images'
     sample_ratio: 2
 
   SparklesDialogueCC_turn2_2img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueCC/'
     anno_path: 'annotations/SparklesDialogueCC_turn2_2img.json'
     img_root: 'images'
     sample_ratio: 1
   SparklesDialogueCC_turn2_3img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueCC/'
     anno_path: 'annotations/SparklesDialogueCC_turn2_3img.json'
     img_root: 'images'
     sample_ratio: 1
   SparklesDialogueCC_turn2_4img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueCC/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueCC/'
     anno_path: 'annotations/SparklesDialogueCC_turn2_4img.json'
     img_root: 'images'
     sample_ratio: 1
 
   SparklesDialogueVG_turn1_2img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueVG/'
     anno_path: 'annotations/SparklesDialogueVG_turn1_2img.json'
     img_root: 'images'
     sample_ratio: 2
   SparklesDialogueVG_turn1_3img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueVG/'
     anno_path: 'annotations/SparklesDialogueVG_turn1_3img.json'
     img_root: 'images'
     sample_ratio: 2
 
   SparklesDialogueVG_turn2_3img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueVG/'
     anno_path: 'annotations/SparklesDialogueVG_turn2_3img.json'
     img_root: 'images'
     sample_ratio: 1
   SparklesDialogueVG_turn2_4img:
-    root_dir: '/path/to/Sparkles/data/SparklesDialogueVG/'
+    root_dir: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/SparklesDialogueVG/'
     anno_path: 'annotations/SparklesDialogueVG_turn2_4img.json'
     img_root: 'images'
     sample_ratio: 1
@@ -68,9 +69,9 @@ datasets:
 #  cc_sbu_align:
 #    sample_ratio: 0
 #    build_info:
-#      storage: '/path/to/Sparkles/data/cc_sbu_align/'
-#      ann_paths: '/path/to/Sparkles/data/cc_sbu_align/filter_cap.json'
-#      vis_root: '/path/to/Sparkles/data/cc_sbu_align/image'
+#      storage: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/cc_sbu_align/'
+#      ann_paths: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/cc_sbu_align/filter_cap.json'
+#      vis_root: '/mnt/localdata/Users/yupanhuang/data/Sparkles/data/cc_sbu_align/image'
 #
 #  LLaVA_description:
 #    root_dir: '/path/to/'
@@ -100,7 +101,7 @@ run:
   warmup_steps: 400
 
   seed: 42
-  output_dir: "/path/to/Sparkles/models/SparklesChat/"
+  output_dir: "/mnt/localdata/Users/yupanhuang/models/Sparkles/init_from_cheetah_vicuna_7b/"
 
   amp: True
   resume_ckpt_path: null

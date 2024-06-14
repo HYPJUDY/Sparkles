@@ -8,8 +8,11 @@ model:
   max_txt_len: 160  # for MiniGPT-4
   prompt_path: "prompts/alignment.txt"  # for MiniGPT-4
   prompt_template: '###Human: {} ###Assistant: '
-  ckpt: '/path/to/Sparkles/models/pretrained_sparkleschat_7b.pth'
+  ckpt: '/mnt/localdata/Users/yupanhuang/data/Sparkles/models/pretrained/sparkleschat_7b.pth'
 #  ckpt: '/path/to/pretrained_minigpt4_7b.pth'
+#  ckpt: '/mnt/localdata/Users/yupanhuang/models/cheetah/cheetah_vicuna_7b.pth'
+#  ckpt: '/mnt/localdata/Users/yupanhuang/models/Sparkles/init_from_cheetah_vicuna_7b/checkpoint_4.pth'
+#  ckpt: '/mnt/localdata/Users/yupanhuang/models/Sparkles/models/pretrained_minigpt4_7b.pth'
 
 
 datasets:

@@ -1,7 +1,7 @@
 import os
 
 def get_Sparkles_path(sparkles_root=None):
-    sparkles_root = "/path/to/Sparkles/" if sparkles_root is None else sparkles_root
+    sparkles_root = "/mnt/localdata/Users/yupanhuang/data/Sparkles/" if sparkles_root is None else sparkles_root
     SparklesDialogueCC_root = os.path.join(sparkles_root, "data", "SparklesDialogueCC")
     SparklesDialogueVG_root = os.path.join(sparkles_root, "data", "SparklesDialogueVG")
     SparklesDialogueCC_path = os.path.join(SparklesDialogueCC_root, "annotations", "SparklesDialogueCC.json")

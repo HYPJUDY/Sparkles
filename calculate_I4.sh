@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 calculate_I4.py --i4-dir /mnt/localdata/Users/yupanhuang/data/I4-Core --dataset NLVR2 --result-dir /mnt/localdata/Users/yupanhuang/models/Sparkles/eval_I4/

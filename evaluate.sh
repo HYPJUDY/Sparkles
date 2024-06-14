@@ -14,7 +14,7 @@ trap "cleanup" SIGINT SIGTERM
 # run evaluation simultaneously on 8 GPUs
 echo "Evaluating"
 
-set_root="--sparkles_root /path/to/Sparkles/"
+set_root="--sparkles_root /mnt/localdata/Users/yupanhuang/data/Sparkles"
 
 start=$(date +%s)
 

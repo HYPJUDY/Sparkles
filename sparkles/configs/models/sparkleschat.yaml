@@ -13,7 +13,7 @@ model:
   num_query_token: 32
 
   # Vicuna
-  llama_model: "/path/to/vicuna/vicuna-7b-v0/"
+  llama_model: "/home/yupanhuang/blob/yupan/models/vicuna/vicuna-7b-v0"
 
   # generation configs
   prompt: ""

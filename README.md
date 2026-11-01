@@ -6,7 +6,7 @@ Yupan Huang, Zaiqiao Meng, Fangyu Liu, Yixuan Su, Nigel Collier, Yutong Lu.
 [//]: # (<a href='https://hypjudy.github.io/sparkles'><img src='https://img.shields.io/badge/Project-Page-Green'></a>)
 <a href='https://arxiv.org/pdf/2308.16463.pdf'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 <a href='https://github.com/HYPJUDY/Sparkles'><img src='https://img.shields.io/badge/Code-Sparkles-yellow'>
-<a href='https://mail2sysueducn-my.sharepoint.com/:f:/g/personal/huangyp28_mail2_sysu_edu_cn/Et5MO5ScU7pLkK8FQtTykc8BWO220liVyJ0jZENpElXssg?e=k5Ie8L'><img src='https://img.shields.io/badge/Download-Resources-pink'></a>
+<a href='https://huggingface.co/datasets/HYPJUDY/Sparkles'><img src='https://img.shields.io/badge/Download-Resources-pink'></a>
 <a href='https://www.youtube.com/watch?v=GyBUqfHbp2w'><img src='https://img.shields.io/badge/Demo-Video-blue'></a> 
 
 
@@ -63,7 +63,11 @@ export OPENAI_API_BASE="https://your-endpoint.openai.com"  # optional, only if c
 ```
 
 ### Download Resources
-Most related resources for Sparkles are available on [OneDrive](https://mail2sysueducn-my.sharepoint.com/:f:/g/personal/huangyp28_mail2_sysu_edu_cn/Et5MO5ScU7pLkK8FQtTykc8BWO220liVyJ0jZENpElXssg?e=k5Ie8L).
+Most related resources for Sparkles are available on Hugging Face: [HYPJUDY/Sparkles](https://huggingface.co/datasets/HYPJUDY/Sparkles).
+```bash
+pip install -U "huggingface_hub[hf_xet]"
+hf download HYPJUDY/Sparkles --repo-type dataset --local-dir /path/to/Sparkles
+```
 <details>
   <summary>Structure of Resources.</summary>
 
